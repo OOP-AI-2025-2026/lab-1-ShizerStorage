@@ -126,12 +126,14 @@ public class Main {
     public boolean array123(int[] nums) {
         int streak = 0;
         for (int i : nums) {
-            if (i == 1 && streak != 2) {
+            if (i == 1) {
                 streak = 1;
             } else if (streak == 1 && i == 2) {
                 streak = 2;
             } else if (streak == 2 && i == 3) {
                 return true;
+            } else {
+                streak = 0;
             }
         }
         return false;
